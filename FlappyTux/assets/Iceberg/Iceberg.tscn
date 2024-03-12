@@ -8,5 +8,6 @@
 position = Vector2( 312, 217 )
 texture = ExtResource( 1 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Iceberg1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 312, 217 )
 polygon = PoolVector2Array( -13, 49, 49, 40, 66, -1, 28, -45, 53, -87, 3, -143, -46, -117, -46, -94, -63, -53, -51, -14, -56, 24, -13, 49 )
