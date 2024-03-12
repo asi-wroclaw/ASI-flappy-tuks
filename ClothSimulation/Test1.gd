@@ -4,6 +4,7 @@ export (float) var rotation_speed=2.09
 
 onready var used_node=$Polygon2D2
 
+
 func _process(delta):
 	used_node.position=get_global_mouse_position()
 	

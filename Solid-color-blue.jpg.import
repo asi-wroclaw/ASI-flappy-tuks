@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ColorGrid.png-75579d956def8bf04b16bdf7c9fb3fb2.stex"
+path="res://.import/Solid-color-blue.jpg-97a071ed7810868b04e70351192b26b5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/ColorGrid.png"
-dest_files=[ "res://.import/ColorGrid.png-75579d956def8bf04b16bdf7c9fb3fb2.stex" ]
+source_file="res://Solid-color-blue.jpg"
+dest_files=[ "res://.import/Solid-color-blue.jpg-97a071ed7810868b04e70351192b26b5.stex" ]
 
 [params]
 
