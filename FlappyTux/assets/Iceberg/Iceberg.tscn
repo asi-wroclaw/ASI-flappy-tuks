@@ -2,7 +2,7 @@
 
 [ext_resource path="res://FlappyTux/assets/Iceberg/iceberg_1.png" type="Texture" id=1]
 
-[node name="Iceberg" type="Area2D"]
+[node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Iceberg1" type="Sprite" parent="."]
 position = Vector2( 312, 217 )

@@ -19,4 +19,4 @@ texture = ExtResource( 1 )
 position = Vector2( 7, 402 )
 
 [node name="Tuks" parent="." instance=ExtResource( 2 )]
-position = Vector2( 249, 168 )
+position = Vector2( 243, 93 )
