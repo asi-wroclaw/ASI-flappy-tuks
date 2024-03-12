@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Images/ColorGrid.png" type="Texture" id=1]
+
+[node name="Iceberg" type="Area2D"]
+
+[node name="ColorGrid" type="Sprite" parent="."]
+position = Vector2( 352, 185 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 239, 143 )
+polygon = PoolVector2Array( -2, -1, 28, 174, 105, 216, 228, 48, 171, -87, 13, -107 )

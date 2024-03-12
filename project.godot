@@ -14,8 +14,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Cloth simulation"
-run/main_scene="res://ClothSimulation/Test1.tscn"
+config/name="Flappy Tuks"
+run/main_scene="res://FlappyTux/Main.tscn"
 config/icon="res://Images/Icon.png"
 
 [autoload]
