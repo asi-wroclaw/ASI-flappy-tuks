@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ClothSimulation/VerletPolygon.gd" type="Script" id=1]
+[ext_resource path="res://Images/ColorGrid.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 24, 128 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 0, 0, 0, 256, 256, 256, 256, 0 )
+uv = PoolVector2Array( 0, 0, 0, 256, 256, 256, 256, 0 )
+polygons = [ PoolIntArray( 0, 3, 2, 1 ) ]
+script = ExtResource( 1 )
+static_vertices = [ 0, 3 ]
+interpolation_steps = 5
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2( 312, 128 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 64, 0, 0, 128, 128, 256, 256, 128, 192, 0 )
+uv = PoolVector2Array( 64, 0, 0, 128, 128, 256, 256, 128, 192, 0 )
+polygons = [ PoolIntArray( 0, 4, 3, 2, 1 ) ]
+script = ExtResource( 1 )
+static_vertices = [ 0, 4 ]
+interpolation_steps = 4
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2( 576, 128 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 64, 0, 0, 128, 128, 256, 256, 128, 192, 0 )
+uv = PoolVector2Array( 64, 0, 0, 128, 128, 256, 256, 128, 192, 0 )
+polygons = [ PoolIntArray( 0, 4, 3, 2, 1 ) ]
+script = ExtResource( 1 )
+static_vertices = [ 0, 4 ]
+interpolation_steps = 4
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+position = Vector2( 752, 320 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 64, 0, 0, 128, 128, 256, 256, 128, 192, 0 )
+uv = PoolVector2Array( 64, 0, 0, 128, 128, 256, 256, 128, 192, 0 )
+polygons = [ PoolIntArray( 0, 4, 3, 2, 1 ) ]
+script = ExtResource( 1 )
+static_vertices = [ 0, 4 ]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 480.0
+margin_top = 16.0
+margin_right = 552.0
+margin_bottom = 30.0
+text = "Benchmark"
+__meta__ = {
+"_edit_use_anchors_": false
+}

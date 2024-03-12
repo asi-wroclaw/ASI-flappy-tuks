@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Images/Cloak.png" type="Texture" id=1]
+[ext_resource path="res://ClothSimulation/Test1.gd" type="Script" id=2]
+[ext_resource path="res://Images/CloakShaded.png" type="Texture" id=3]
+[ext_resource path="res://ClothSimulation/VerletPolygon.gd" type="Script" id=4]
+
+[node name="VerletTest" type="Node2D"]
+position = Vector2( 1, 0 )
+script = ExtResource( 2 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2( 107.404, 192.788 )
+rotation = 0.549779
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256, 0, 128, 128, 256, 128, 128, 256, 128, 128, 0 )
+uv = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256, 0, 128, 128, 256, 128, 128, 256, 128, 128, 0 )
+polygons = [ PoolIntArray( 0, 8, 6, 4 ), PoolIntArray( 6, 4, 3, 5 ), PoolIntArray( 6, 8, 1, 7 ), PoolIntArray( 6, 5, 2, 7 ) ]
+internal_vertex_count = 5
+script = ExtResource( 4 )
+static_vertices = [ 0, 1 ]
+compress_elasticity = 0.0
+strech_elasticity = 0.479
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 721.105, 208.938 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256, 85, 0, 170, 0, 170, 85, 85, 85, 0, 85, 0, 170, 85, 170, 85, 255, 170, 255, 170, 170, 255, 170, 255, 85 )
+uv = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256, 85, 0, 170, 0, 170, 85, 85, 85, 0, 85, 0, 170, 85, 170, 85, 255, 170, 255, 170, 170, 255, 170, 255, 85 )
+polygons = [ PoolIntArray( 0, 4, 7, 8 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 5, 1, 15, 6 ), PoolIntArray( 8, 7, 10, 9 ), PoolIntArray( 6, 15, 14, 13 ), PoolIntArray( 10, 9, 3, 11 ), PoolIntArray( 10, 13, 12, 11 ), PoolIntArray( 13, 14, 2, 12 ) ]
+internal_vertex_count = 12
+script = ExtResource( 4 )
+static_vertices = [ 0, 1 ]
+interpolation_steps = 2
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2( 384.878, 258.878 )
+texture = ExtResource( 3 )
+polygon = PoolVector2Array( 104, 56, 128, -3.8147e-06, 256, 256, 0, 256, 160, 64, -16, 72, 96, 64, 0, 64, 0, 128, 0, 192, 96, 192, 96, 128, 96, 256, 128, 256, 160, 256, 160, 192, 128, 192, 128, 128, 160, 128, 256, 192, 256, 128, 256, 64, 18.5907, 48.1259, 0, 32, 32, 8, 69.5652, 55.4723, 48, 64, 48, 128, 48, 192, 48, 256, 208, 256, 208, 192, 208, 128, 208, 64, 80, -3.8147e-06 )
+uv = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256, 160, 64, 128, 64, 96, 64, 0, 64, 0, 128, 0, 192, 96, 192, 96, 128, 96, 256, 128, 256, 160, 256, 160, 192, 128, 192, 128, 128, 160, 128, 256, 192, 256, 128, 256, 64, 96, 0, 128, 0, 160, 0, 48, 0, 48, 64, 48, 128, 48, 192, 48, 256, 208, 256, 208, 192, 208, 128, 208, 64, 208, 0 )
+polygons = [ PoolIntArray( 6, 11, 17, 5 ), PoolIntArray( 17, 18, 4, 5 ), PoolIntArray( 18, 17, 16, 15 ), PoolIntArray( 17, 11, 10, 16 ), PoolIntArray( 10, 16, 13, 12 ), PoolIntArray( 15, 16, 13, 14 ), PoolIntArray( 23, 22, 6, 5 ), PoolIntArray( 23, 24, 4, 5 ), PoolIntArray( 0, 25, 26, 7 ), PoolIntArray( 26, 25, 22, 6 ), PoolIntArray( 26, 7, 8, 27 ), PoolIntArray( 26, 6, 11, 27 ), PoolIntArray( 28, 10, 12, 29 ), PoolIntArray( 28, 27, 11, 10 ), PoolIntArray( 28, 9, 3, 29 ), PoolIntArray( 28, 27, 8, 9 ), PoolIntArray( 33, 34, 1, 21 ), PoolIntArray( 33, 4, 24, 34 ), PoolIntArray( 33, 32, 18, 4 ), PoolIntArray( 33, 21, 20, 32 ), PoolIntArray( 31, 32, 20, 19 ), PoolIntArray( 31, 15, 18, 32 ), PoolIntArray( 31, 30, 14, 15 ), PoolIntArray( 31, 19, 2, 30 ) ]
+internal_vertex_count = 31
+script = ExtResource( 4 )
+static_vertices = [ 0 ]
+interpolation_steps = 2
+strech_elasticity = 0.957
+
+[node name="Label" type="Label" parent="."]
+margin_left = 798.313
+margin_top = 0.885
+margin_right = 1021.31
+margin_bottom = 14.885
+text = "Press f1 to toggle verlet debug grid
+Use e,q to rotate cloak
+Press Tab to change used node"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+position = Vector2( 293, 61 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( -0.729919, 2.18978, 10.9489, 62.0438, 55.4745, 116.058, 113.869, 165.693, 167.883, 121.168, 236.496, 91.9708, 254.745, 40.8759, 253.285, 1.45985, 218.248, 27.7372, 140.876, 71.5329, 62.0438, 42.3358 )
+uv = PoolVector2Array( -0.729919, 2.18978, 10.9489, 62.0438, 55.4745, 116.058, 113.869, 165.693, 167.883, 121.168, 236.496, 91.9708, 254.745, 40.8759, 253.285, 1.45985, 218.248, 27.7372, 140.876, 71.5329, 62.0438, 42.3358 )
+polygons = [ PoolIntArray( 0, 1, 10 ), PoolIntArray( 2, 1, 10, 9 ), PoolIntArray( 2, 4, 3 ), PoolIntArray( 9, 4, 2 ), PoolIntArray( 9, 8, 5, 4 ), PoolIntArray( 5, 6, 7, 8 ) ]
+script = ExtResource( 4 )
+static_vertices = [ 0, 7 ]
