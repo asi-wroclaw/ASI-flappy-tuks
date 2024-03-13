@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://FlappyTux/assets/Tuks/Tuks.gd" type="Script" id=1]
 [ext_resource path="res://FlappyTux/assets/Tuks/tuks.png" type="Texture" id=2]
@@ -14,12 +14,6 @@ particles_animation = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
-
-[sub_resource type="ImageTexture" id=3]
-flags = 63
-storage = 1
-flags = 63
-size = Vector2( 16, 16 )
 
 [node name="RigidBody2D" type="RigidBody2D"]
 contacts_reported = 1
@@ -59,7 +53,6 @@ one_shot = true
 explosiveness = 0.06
 fixed_fps = 60
 draw_order = 1
-texture = SubResource( 3 )
 emission_shape = 1
 emission_sphere_radius = 7.0
 gravity = Vector2( 0, 0 )

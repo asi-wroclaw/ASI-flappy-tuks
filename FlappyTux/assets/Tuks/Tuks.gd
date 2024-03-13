@@ -21,8 +21,9 @@ func start(pos):
 
 func _process(delta):
 	if(game_over):
+		modulate.a -= 1*delta
 		return;
-	
+		
 	var vel=Vector2();
 	
 	if Input.is_action_pressed("ui_up"):
@@ -70,6 +71,7 @@ func _physics_process(delta):
 
 func _on_RigidBody2D_body_entered(body):
 	pass
-	hide()
+	#hide()
 	$CollisionShape2D.set_deferred("disabled",true)
 	game_over=true
+	$CPUParticles2D.set_emitting(true)
