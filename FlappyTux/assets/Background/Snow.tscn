@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://FlappyTux/Cloak.gd" type="Script" id=1]
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+//uniform vec4 color_correction : hint_color;
+
+uniform float x_scroll_speed;
+uniform float y_scroll_speed;
+
+uniform sampler2D colorGradient;
+
+uniform vec2 UV_offset;
+
+vec2 dynamic_distortion(float uvx, float uvy){
+	const float no_dist = 1.0;
+	
+	uvx *= (sin(TIME)*sin(TIME)*0.15+0.5);
+	uvy *= no_dist;
+	return vec2(uvx, uvy);
+}
+
+float brightness(vec4 Texture){ 
+	return (Texture.r + Texture.g + Texture.b) / 3.0;
+} 
+
+vec4 greyscale(vec4 Texture){
+	return vec4 (brightness(Texture), brightness(Texture), brightness(Texture), Texture.a);
+}
+
+vec2 scrol(float x, float y, float scale){
+	return vec2(y, x)*TIME*scale;
+}
+
+void fragment() {
+	/*
+	vec4 texture_color_1 = (texture(TEXTURE, dynamic_distortion(UV.x + UV_offset.x, UV.y + UV_offset.y) + scrol(y_scroll_speed, x_scroll_speed, 1)));
+	vec4 texture_color_2 = texture(texture2, UV + UV_offset + scrol(y_scroll_speed, x_scroll_speed, 0.5));
+	float energy = brightness(texture_color_1) * brightness(texture_color_2);
+	vec4 color = texture(colorGradient, vec2(energy));
+	COLOR = color;
+	*/
+	
+	COLOR = texture(colorGradient, vec2(brightness(texture(TEXTURE, UV))));
+}"
+
+[sub_resource type="Gradient" id=8]
+offsets = PoolRealArray( 0, 0.0026738, 0.481283, 0.877005 )
+colors = PoolColorArray( 1, 1, 1, 1, 0, 0.671875, 1, 1, 1, 1, 1, 1, 0.394531, 0.772949, 1, 1 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
+width = 2052
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 5 )
+shader_param/x_scroll_speed = 0.0
+shader_param/y_scroll_speed = 0.0
+shader_param/UV_offset = Vector2( 0, -0.042 )
+shader_param/colorGradient = SubResource( 9 )
+
+[sub_resource type="OpenSimplexNoise" id=3]
+resource_local_to_scene = true
+seed = 21
+octaves = 9
+period = 90.9
+persistence = 0.226
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=4]
+seamless = true
+bump_strength = 88.0
+noise = SubResource( 3 )
+
+[node name="water_surface" type="Sprite"]
+material = SubResource( 2 )
+position = Vector2( 6431, -10174 )
+scale = Vector2( 20, 20 )
+texture = SubResource( 4 )
+offset = Vector2( -290.573, 526.122 )
+script = ExtResource( 1 )
