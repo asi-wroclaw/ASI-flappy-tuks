@@ -2,14 +2,14 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="162.9315mm"
+   height="130.83272mm"
+   viewBox="0 0 162.9315 130.83272"
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
    sodipodi:docname="iceberg_3.svg"
-   inkscape:export-filename="iceberg_3.png"
+   inkscape:export-filename="../iceberg_3.png"
    inkscape:export-xdpi="43.787205"
    inkscape:export-ydpi="43.787205"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="0.65512531"
-     inkscape:cx="319.78615"
-     inkscape:cy="528.14324"
+     inkscape:zoom="0.6551253"
+     inkscape:cx="202.25139"
+     inkscape:cy="244.22809"
      inkscape:window-width="1366"
      inkscape:window-height="717"
      inkscape:window-x="0"
@@ -40,7 +40,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-22.048909,-88.263496)">
     <rect
        style="display:none;fill:#ffffff;stroke-width:0.267999"
        id="rect1"
@@ -49,12 +50,12 @@
        x="12.118159"
        y="76.817642" />
     <path
-       style="fill:#9edcd5;stroke-width:0.267999;fill-opacity:1"
+       style="fill:#9edcd5;fill-opacity:1;stroke-width:0.267999"
        d="m 35.230128,110.96514 20.10302,-22.701644 31.98042,16.497034 42.548082,-12.141058 55.11876,21.015438 -9.95345,60.93675 5.29491,41.32209 -60.65059,-9.16966 -56.254254,12.37212 -41.368117,-6.76617 18.679083,-36.85083 -11.837075,-32.20882 z"
        id="path1" />
     <path
-       style="fill:#b8d7ef;stroke-width:0.263125;fill-opacity:1"
-       d="m 36.394682,113.22609 20.408639,-22.80183 31.273305,16.26197 41.607304,-11.968062 53.95393,19.943952 -11.43633,59.94619 5.029,38.77501 -57.22142,-10.60411 -54.596635,13.3616 -39.766088,-5.26902 16.874711,-34.47455 -11.575347,-31.74987 z"
+       style="fill:#b8d7ef;fill-opacity:1;stroke-width:0.263125"
+       d="m 43.485601,113.68062 13.929917,-16.13497 29.543874,16.87269 43.056658,-14.764322 47.50671,17.849542 -12.73279,56.65619 4.65505,32.42304 -49.74177,-9.69062 -54.968775,13.99353 -32.200356,-4.4599 18.062983,-30.89741 -12.776147,-31.19358 z"
        id="path1-7"
        sodipodi:nodetypes="ccccccccccccc" />
   </g>
