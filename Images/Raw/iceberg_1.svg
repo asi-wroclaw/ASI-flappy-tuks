@@ -12,11 +12,11 @@
    inkscape:export-filename="../iceberg_1.png"
    inkscape:export-xdpi="43.787205"
    inkscape:export-ydpi="43.787205"
+   xml:space="preserve"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
      id="namedview1"
      pagecolor="#505050"
      bordercolor="#eeeeee"
@@ -27,36 +27,29 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="1.3102506"
-     inkscape:cx="181.26303"
-     inkscape:cy="241.17524"
+     inkscape:cx="-22.514777"
+     inkscape:cy="225.14777"
      inkscape:window-width="1366"
      inkscape:window-height="717"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs1" />
-  <g
+     inkscape:current-layer="layer1" /><defs
+     id="defs1" /><g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-68.191393,-64.663329)">
-    <rect
+     transform="translate(-68.191393,-64.663329)"><rect
        style="display:none;fill:#b9d7ef;fill-opacity:1;stroke-width:0.264583"
        id="rect1"
        width="98.566101"
        height="128.10071"
        x="60.415817"
-       y="57.236683" />
-    <path
-       style="fill:#9edcd5;fill-opacity:1;stroke-width:0.283907;stroke-dasharray:none"
+       y="57.236683" /><path
+       style="fill:#99ddff;fill-opacity:1;stroke-width:0.283907;stroke-dasharray:none"
        d="M 106.61445,64.663329 78.03517,79.9058 l -0.235013,13.848592 -9.608764,23.628018 6.763449,23.91092 -3.38431,21.46335 25.494979,14.58271 36.512539,-5.40584 10.46379,-23.99265 -21.62361,-25.596 14.07407,-24.380817 z"
-       id="path1-9" />
-    <path
-       style="display:inline;fill:#b9d7ef;fill-opacity:1;stroke-width:0.265885;stroke-dasharray:none"
+       id="path1-9" /><path
+       style="display:inline;fill:#c2ebff;fill-opacity:1;stroke-width:0.265885;stroke-dasharray:none"
        d="m 106.7771,72.138197 -21.252518,11.068699 0.232464,12.306583 -8.663179,23.021731 8.087926,21.73089 -4.810556,18.57759 17.222679,11.64175 30.884074,-4.01706 5.50506,-17.66853 -21.73952,-27.01854 15.11601,-23.509703 z"
        id="path1"
-       sodipodi:nodetypes="cccccccccccc" />
-  </g>
-</svg>
+       sodipodi:nodetypes="cccccccccccc" /></g></svg>
