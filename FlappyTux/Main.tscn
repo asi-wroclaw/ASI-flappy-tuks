@@ -19,9 +19,9 @@ script = ExtResource( 4 )
 bergTemplates = [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 956.46, 536.027 )
+position = Vector2( 956.458, 1079.3 )
 rotation = 1.5708
-scale = Vector2( 4.3203, 7.61928 )
+scale = Vector2( 8.56461, 7.61928 )
 texture = ExtResource( 1 )
 
 [node name="Obstangle Timer" type="Timer" parent="."]
@@ -35,10 +35,10 @@ curve = SubResource( 1 )
 position = Vector2( 2068, 1130 )
 rotation = -1.57322
 
-[node name="Toks" parent="." instance=ExtResource( 2 )]
+[node name="Tuks" parent="." instance=ExtResource( 2 )]
 position = Vector2( 468, 256 )
 
-[node name="Camera2D" type="Camera2D" parent="Toks"]
+[node name="Camera2D" type="Camera2D" parent="Tuks"]
 current = true
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]

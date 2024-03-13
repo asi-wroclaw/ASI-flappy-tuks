@@ -13,14 +13,18 @@ var speed=0;
 var next_spawn_time=0;
 var last_spawn_time_change;
 
+var current_distance=0;
+
+var maxTuxX=0;
+
 func _init():
 	speed=start_speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	last_spawn_time_change = Time.get_unix_time_from_system()
+	current_distance=$Tuks.position.x
 
-# 
 func get_spawning_cooldown():
 	return 1
 
@@ -35,7 +39,13 @@ func _process(delta):
 			spawn_delay -= 0.1
 		if spawn_delay < min_spawn_delay:
 			spawn_delay = min_spawn_delay
-		 
+	
+	var tuks_position=$Tuks.position.x
+	if tuks_position>maxTuxX:
+		$Shore.position.x=tuks_position+1000;
+		$Shore2.position.x=tuks_position+1000;
+	
+ 
 func spawn_iceberg():
 	$Shore.set_speed(speed)
 	$Shore2.set_speed(speed)
