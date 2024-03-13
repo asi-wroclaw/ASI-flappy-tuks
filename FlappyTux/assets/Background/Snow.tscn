@@ -72,7 +72,7 @@ seamless = true
 bump_strength = 88.0
 noise = SubResource( 3 )
 
-[node name="water_surface" type="Sprite"]
+[node name="water_surface2" type="Sprite"]
 material = SubResource( 2 )
 position = Vector2( 291, -523 )
 z_index = -1

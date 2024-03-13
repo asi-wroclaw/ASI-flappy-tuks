@@ -17,19 +17,17 @@ _data = {
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
-bergTemplates = [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
-spawn_delay = 2.0
-spawn_delay_change = 4.0
 
 [node name="IcebergSpawn" type="Path2D" parent="."]
 position = Vector2( 957, 37 )
 curve = SubResource( 1 )
 script = ExtResource( 9 )
 waterTile = ExtResource( 10 )
+bergTemplates = [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
 
 [node name="PathFollow2D" type="PathFollow2D" parent="IcebergSpawn"]
-position = Vector2( 2064, 2100 )
-rotation = -1.56942
+position = Vector2( 2069, 1908 )
+rotation = -1.57173
 
 [node name="Tuks" parent="." instance=ExtResource( 2 )]
 position = Vector2( 433, 870 )
@@ -41,7 +39,7 @@ __meta__ = {
 current = true
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 192, 502 )
+position = Vector2( 237, 563 )
 linear_velocity = Vector2( 100, 0 )
 
 [node name="Shore" parent="." instance=ExtResource( 8 )]
