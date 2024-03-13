@@ -2,6 +2,7 @@ extends RigidBody2D
 
 export var speed=4000
 export var maxSpeed=4000;
+export (int) var max_drift_value=12000
 
 var screen_size
 var game_over=false
@@ -44,7 +45,6 @@ func handle_friction():
 	linear_velocity += -linear_velocity*0.07
 
 func handle_drift(delta):
-	var max_drift_value = 8000
 	frame_count += 1
 	if (frame_count % 180 == 0):
 		previous_drift_value.x = randi() % max_drift_value - round(max_drift_value / 2)
