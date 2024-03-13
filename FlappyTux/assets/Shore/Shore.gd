@@ -38,6 +38,5 @@ func spawn_new_snow_tile(loc):
 	var tile=snowTile.instance()
 	
 	get_parent().add_child(tile)
-	
-	print(position.y+snowTileYOffset)
+
 	tile.position=Vector2(loc,position.y+snowTileYOffset)

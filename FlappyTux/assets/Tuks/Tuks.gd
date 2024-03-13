@@ -61,7 +61,6 @@ func handle_drift(delta):
 
 func _physics_process(delta):
 	handle_friction()
-	
 
 #func _on_Tuks_body_entered(body):
 #	print("collision")

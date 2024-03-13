@@ -93,8 +93,9 @@ noise = SubResource( 3 )
 
 [node name="water_surface" type="Sprite"]
 material = SubResource( 2 )
-position = Vector2( 1585.63, 660.178 )
+position = Vector2( 2041, 1120 )
 rotation = 1.5708
-scale = Vector2( 1.212, 2.03108 )
+scale = Vector2( 3.86876, 3.86876 )
+z_index = -2
 texture = SubResource( 4 )
 offset = Vector2( -290.573, 526.122 )

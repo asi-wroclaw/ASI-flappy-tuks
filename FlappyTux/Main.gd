@@ -45,16 +45,15 @@ func _process(delta):
 	if tuks_position>maxTuxX:
 		$Shore.position.x=tuks_position+1500;
 		$Shore2.position.x=tuks_position+1500;
-		pass
-	
+		$IcebergSpawn.position.x=tuks_position+1500;
  
 func spawn_iceberg():
 	var berg=bergTemplates[randi()%bergTemplates.size()].instance()
 	add_child(berg)
 	
-	$IcebergSpawnPath/PathFollow2D.set_offset(randi())
-	var direction = $IcebergSpawnPath/PathFollow2D.rotation + PI / 2
-	berg.position = $IcebergSpawnPath/PathFollow2D.position
+	$IcebergSpawn/PathFollow2D.set_offset(randi())
+	var direction = $IcebergSpawn/PathFollow2D.rotation + PI / 2
+	berg.position = $IcebergSpawn/PathFollow2D.position
 	
 	direction += rand_range(-PI / 4, PI / 4)
 	

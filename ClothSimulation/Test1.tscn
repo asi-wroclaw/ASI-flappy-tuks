@@ -1,107 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Images/Cloak.png" type="Texture" id=1]
 [ext_resource path="res://ClothSimulation/Test1.gd" type="Script" id=2]
 [ext_resource path="res://Images/CloakShaded.png" type="Texture" id=3]
 [ext_resource path="res://ClothSimulation/VerletPolygon.gd" type="Script" id=4]
-
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
-
-uniform vec4 color : hint_color =vec4(1, 5, 150, 100);
-
-uniform vec2 u_mouse_position;
-uniform vec2 u_ball_position=vec2(.5);
-
-uniform float ratio;
-uniform float ball_abberation : hint_range(0,.2);
-
-float rand(vec2 pos){
-	return fract(sin(dot(pos+TIME*10.0, vec2(56,47))*1000.0)*1000.0);
-}
-
-float noise(vec2 pos){
-	vec2 i=floor(pos);
-	vec2 f=fract(pos);
-	
-	float a=rand(i);
-	float b=rand(i+vec2(1.0,5.0));
-	float c=rand(i+vec2(0.5,5.0));
-	float d=rand(i+vec2(10.0,3.0));
-	
-	vec2 cubic=f*f*(3.0-2.0*f);
-//	vec2 cubic=f;
-	
-	//return mix(sin(a),tan(b),cubic.x)+tan(c-a)*cubic.y*(1.0-cubic.x)+sin(d-b)*cubic.x*cubic.y;
-	return mix(sin(a+b)*0.1, (c+d+TIME*100.0)*0.01, fract(TIME)*c*0.00001);
-}
-
-float fbm(vec2 coord, int repeats){
-	float ret=0.0;
-	float scale=.5;
-	
-	for(int i=0;i<repeats;i++){
-		ret+=noise(coord)*scale;
-		coord*=2.0;
-		scale*.5;
-	}
-	
-	return ret;
-}
-
-void fragment(){
-	vec2 coord=UV*20.0+TIME*.05;
-	coord.x*=ratio;
-	
-	vec2 motion=vec2(fbm(coord+TIME*.5,3));
-	
-	vec2 dist=u_ball_position-UV;
-	float r=dist.x*dist.x*ratio*ratio+dist.y*dist.y;
-	r=.02/r;
-	float r2=r-4.;
-	r2=sin(min(0.,r2));
-	r=min(min(r,4),r2);
-	dist=normalize(dist)*r;
-	motion+=dist;
-	
-	float final=fbm(coord+motion,2);
-	final=clamp(final*1.25,0.,1.);
-	
-	COLOR=vec4((color*final).rgb,2.0);
-	COLOR=mix(texture(TEXTURE,UV+dist/9.),COLOR,final*1.3);
-	
-//	COLOR=texture(TEXTURE,UV+motion*.05);
-	COLOR=vec4((mix(texture(TEXTURE,UV+fract(motion)*.05),color,final)).rgb,1.0);
-//	COLOR=mix(texture(TEXTURE,UV+dist/9.),COLOR,final*1.3);
-	
-	vec2 tex_pos=UV+fract(motion)*.05;
-	
-	COLOR.r=(mix(texture(TEXTURE,tex_pos+dist*0.05),color,final)).r;
-	COLOR.g=(mix(texture(TEXTURE,tex_pos+dist*(0.05)),color,final)).g;
-	COLOR.b=(mix(texture(TEXTURE,tex_pos+dist*(0.05+2.*ball_abberation)),color,final)).b;
-}
-"
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/color = Color( 1, 5, 150, 100 )
-shader_param/u_mouse_position = null
-shader_param/u_ball_position = Vector2( 0.5, 0.5 )
-shader_param/ratio = null
-shader_param/ball_abberation = null
-
-[sub_resource type="Shader" id=3]
-code = "shader_type canvas_item;
-
-void fragment(){
-	COLOR.r = 255.0;
-	COLOR.g = 255.0;
-	COLOR.b = 255.0;
-	COLOR.a = 1.0;
-}"
-
-[sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 3 )
 
 [node name="VerletTest" type="Node2D"]
 position = Vector2( 1, 0 )
@@ -162,15 +64,3 @@ uv = PoolVector2Array( -0.729919, 2.18978, 10.9489, 62.0438, 55.4745, 116.058, 1
 polygons = [ PoolIntArray( 0, 1, 10 ), PoolIntArray( 2, 1, 10, 9 ), PoolIntArray( 2, 4, 3 ), PoolIntArray( 9, 4, 2 ), PoolIntArray( 9, 8, 5, 4 ), PoolIntArray( 5, 6, 7, 8 ) ]
 script = ExtResource( 4 )
 static_vertices = [ 0, 7 ]
-
-[node name="Cloak" type="Sprite" parent="."]
-material = SubResource( 2 )
-position = Vector2( 511.839, 302.412 )
-rotation = 1.5708
-scale = Vector2( 2.34697, 3.99713 )
-texture = ExtResource( 1 )
-
-[node name="Cloak" type="Sprite" parent="Cloak"]
-material = SubResource( 4 )
-position = Vector2( 328.759, 220.618 )
-texture = ExtResource( 1 )
