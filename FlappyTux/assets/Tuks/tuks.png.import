@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tuks.png-06bdae8b9dc5b6a2a74463f5ecb41690.stex"
+path="res://.import/tuks.png-65328291566f30f582386d2ac7599d99.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FlappyTux/assets/tuks.png"
-dest_files=[ "res://.import/tuks.png-06bdae8b9dc5b6a2a74463f5ecb41690.stex" ]
+source_file="res://FlappyTux/assets/Tuks/tuks.png"
+dest_files=[ "res://.import/tuks.png-65328291566f30f582386d2ac7599d99.stex" ]
 
 [params]
 

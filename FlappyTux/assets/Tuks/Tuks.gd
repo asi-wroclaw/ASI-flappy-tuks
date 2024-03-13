@@ -6,6 +6,7 @@ var screen_size
 func _ready():
 #	hide()
 	screen_size=get_viewport_rect().size
+	contact_monitor=true
 
 func start(pos):
 	position=pos
@@ -25,6 +26,8 @@ func _process(delta):
 		position+=vel*delta
 		position.x=clamp(position.x,0,screen_size.x)
 		position.y=clamp(position.y,0,screen_size.y)
+	
+	#print(get_colliding_bodies());
 
 #func _on_Tuks_body_entered(body):
 #	print("collision")
@@ -43,3 +46,6 @@ func _on_Tuks_body_shape_entered(body_rid, body, body_shape_index, local_shape_i
 
 func _on_Tuks_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
 	print("shape exited")
+
+func _on_RigidBody2D_body_entered(body):
+	print("entered")
