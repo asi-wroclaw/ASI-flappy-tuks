@@ -6,7 +6,7 @@ var screen_size
 func _ready():
 #	hide()
 	screen_size=get_viewport_rect().size
-	contact_monitor=true
+	set_contact_monitor(true)
 
 func start(pos):
 	position=pos
@@ -35,17 +35,9 @@ func _process(delta):
 #	$CollisionShape2D.set_deferred("disabled",true)
 #	emit_signal("hit")
 
-func _on_Tuks_body_entered(body):
-	print("entered")
-
-func _on_Tuks_body_exited(body):
-	print("exited")
-
-func _on_Tuks_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	print("shape entered")
-
-func _on_Tuks_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
-	print("shape exited")
-
 func _on_RigidBody2D_body_entered(body):
+	set_deferred("mode", RigidBody2D.MODE_STATIC)
 	print("entered")
+
+func _on_RigidBody2D_body_exited(body):
+	print("exited")
