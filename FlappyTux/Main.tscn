@@ -18,7 +18,7 @@ _data = {
 script = ExtResource( 4 )
 bergTemplates = [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
 
-[node name="Cloak" type="Sprite" parent="."]
+[node name="Background" type="Sprite" parent="."]
 position = Vector2( 956.46, 536.027 )
 rotation = 1.5708
 scale = Vector2( 4.3203, 7.61928 )
@@ -35,8 +35,11 @@ curve = SubResource( 1 )
 position = Vector2( 2068, 1130 )
 rotation = -1.57322
 
-[node name="RigidBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 241, 193 )
+[node name="Toks" parent="." instance=ExtResource( 2 )]
+position = Vector2( 468, 256 )
+
+[node name="Camera2D" type="Camera2D" parent="Toks"]
+current = true
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 192, 502 )

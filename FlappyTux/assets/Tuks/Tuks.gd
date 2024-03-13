@@ -1,6 +1,8 @@
 extends RigidBody2D
 
 export var speed=400
+export var maxSpeed=500;
+
 var screen_size
 
 var game_over=false
@@ -30,11 +32,11 @@ func _process(delta):
 	elif Input.is_action_pressed("ui_right"):
 		vel.x=1
 	
-	if vel.length()>0:
-		vel=vel.normalized()*speed
-		position+=vel*delta
-		position.x=clamp(position.x,0,screen_size.x)
-		position.y=clamp(position.y,0,screen_size.y)
+	linear_velocity+=vel*delta*speed;
+	
+	var currentSpeed=linear_velocity.length()
+	if currentSpeed>maxSpeed:
+		linear_velocity=linear_velocity.normalized()*maxSpeed
 
 #func _on_Tuks_body_entered(body):
 #	print("collision")
@@ -43,4 +45,6 @@ func _process(delta):
 #	emit_signal("hit")
 
 func _on_RigidBody2D_body_entered(body):
+	hide()
+	$CollisionShape2D.set_deferred("disabled",true)
 	game_over=true
