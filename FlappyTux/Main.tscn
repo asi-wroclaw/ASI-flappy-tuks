@@ -1,12 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Images/Cloak.png" type="Texture" id=1]
 [ext_resource path="res://FlappyTux/assets/Tuks/Tuks.tscn" type="PackedScene" id=2]
 [ext_resource path="res://FlappyTux/assets/Iceberg/Iceberg.tscn" type="PackedScene" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.5, 32 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,16 +20,3 @@ position = Vector2( -26, 408 )
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 271, 195 )
-
-[node name="Area2D2" type="Area2D" parent="."]
-position = Vector2( 292, 435 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Icon" type="Sprite" parent="Area2D2"]
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2( -0.5, 0 )
-shape = SubResource( 1 )

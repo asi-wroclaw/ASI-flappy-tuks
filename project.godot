@@ -49,6 +49,6 @@ node_change={
 [physics]
 
 2d/thread_model=2
-Verlet/default_gravity=Vector2( 0, 9.8 )
 Verlet/debug_grid=false
 Verlet/debug_statistics=true
+Verlet/default_gravity=Vector2( -9, 3.878 )
