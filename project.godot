@@ -23,6 +23,12 @@ config/icon="res://Images/Icon.png"
 VerletEngine="*res://Lib/VerletEngine.gd"
 AnaliticGeometry="*res://Lib/AnaliticGeometry.gd"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/stretch/mode="2d"
+
 [input]
 
 debug_grid_toggle={

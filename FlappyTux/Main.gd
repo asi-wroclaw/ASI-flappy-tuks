@@ -28,8 +28,9 @@ func _on_Obstangle_Timer_timeout():
 	berg.position = $IcebergSpawnPath/PathFollow2D.position
 	
 	direction += rand_range(-PI / 4, PI / 4)
-	berg.rotation = direction
 	
 	var velocity = Vector2(rand_range(-speed_randomization, speed_randomization) - speed,
 		rand_range(-speed_randomization, speed_randomization))
 	berg.linear_velocity = velocity.rotated(direction)
+	
+	berg.rotation = rand_range(0, 2*PI);
