@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://FlappyTux/assets/Shore/Shore.gd" type="Script" id=1]
 [ext_resource path="res://FlappyTux/assets/Iceberg_2/Iceberg.tscn" type="PackedScene" id=2]
 [ext_resource path="res://FlappyTux/assets/Iceberg/Iceberg.tscn" type="PackedScene" id=3]
 [ext_resource path="res://FlappyTux/assets/Iceberg_3/Iceberg.tscn" type="PackedScene" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://FlappyTux/assets/Background/Snow.tscn" type="PackedScene" id=6]
 
 [node name="Shore" type="Node2D"]
 script = ExtResource( 1 )
 bergTemplates = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ]
+snowTile = ExtResource( 6 )
 
 [node name="Icon" type="Sprite" parent="."]
 texture = ExtResource( 5 )

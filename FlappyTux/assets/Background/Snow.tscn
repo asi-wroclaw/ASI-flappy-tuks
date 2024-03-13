@@ -1,6 +1,4 @@
-[gd_scene load_steps=8 format=2]
-
-[ext_resource path="res://FlappyTux/Cloak.gd" type="Script" id=1]
+[gd_scene load_steps=7 format=2]
 
 [sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
@@ -76,8 +74,7 @@ noise = SubResource( 3 )
 
 [node name="water_surface" type="Sprite"]
 material = SubResource( 2 )
-position = Vector2( 6431, -10174 )
-scale = Vector2( 20, 20 )
+position = Vector2( 291, -523 )
+z_index = -1
 texture = SubResource( 4 )
 offset = Vector2( -290.573, 526.122 )
-script = ExtResource( 1 )

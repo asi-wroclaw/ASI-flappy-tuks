@@ -43,14 +43,12 @@ func _process(delta):
 	
 	var tuks_position=$Tuks.position.x
 	if tuks_position>maxTuxX:
-		$Shore.position.x=tuks_position+1000;
-		$Shore2.position.x=tuks_position+1000;
+		$Shore.position.x=tuks_position+1500;
+		$Shore2.position.x=tuks_position+1500;
+		pass
 	
  
 func spawn_iceberg():
-	$Shore.set_speed(speed)
-	$Shore2.set_speed(speed)
-
 	var berg=bergTemplates[randi()%bergTemplates.size()].instance()
 	add_child(berg)
 	
@@ -65,6 +63,3 @@ func spawn_iceberg():
 	berg.linear_velocity = velocity.rotated(direction)
 	
 	berg.rotation = rand_range(0, 2*PI);
-
-func _on_Obstangle_Timer_timeout():
-	pass
