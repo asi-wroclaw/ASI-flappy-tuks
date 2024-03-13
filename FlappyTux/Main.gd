@@ -37,6 +37,9 @@ func _process(delta):
 			spawn_delay = min_spawn_delay
 		 
 func spawn_iceberg():
+	$Shore.set_speed(speed)
+	$Shore2.set_speed(speed)
+
 	var berg=bergTemplates[randi()%bergTemplates.size()].instance()
 	add_child(berg)
 	
