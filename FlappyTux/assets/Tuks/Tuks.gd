@@ -5,6 +5,7 @@ export var maxSpeed=4000;
 
 var screen_size
 var game_over=false
+var frame_count = 0
 
 func _ready():
 #	hide()
@@ -37,9 +38,29 @@ func _process(delta):
 	if currentSpeed>maxSpeed:
 		linear_velocity=linear_velocity.normalized()*maxSpeed
 
+func handle_friction():
+	linear_velocity += -linear_velocity*0.07
+
+func handle_drift():
+	var drift_value = 2000
+	var previous_drift_value = {"x": 0, "y": 0}
+	frame_count += 1
+	if (frame_count % 60 == 0):
+		previous_drift_value.x = randi() % drift_value - drift_value/2
+		previous_drift_value.y = randi() % drift_value - drift_value/2
+	else:
+		previous_drift_value.x *= 2
+		previous_drift_value.y *= 2
+	if previous_drift_value.x != 0 and previous_drift_value.y != 0:
+		linear_velocity.x += randi() % previous_drift_value.x - \
+							previous_drift_value.x/2
+		linear_velocity.y += randi() % previous_drift_value.x - \
+							previous_drift_value.x/2
+
 func	 _physics_process(delta):
-	linear_velocity.x += -linear_velocity.x*0.05
-	linear_velocity.y += -linear_velocity.y*0.05
+	handle_friction()
+	handle_drift()
+	
 
 #func _on_Tuks_body_entered(body):
 #	print("collision")

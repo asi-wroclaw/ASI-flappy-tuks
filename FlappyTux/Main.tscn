@@ -17,6 +17,8 @@ _data = {
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
 bergTemplates = [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
+spawn_delay = 2.0
+spawn_delay_change = 4.0
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 956.458, 1079.3 )
@@ -47,8 +49,10 @@ linear_velocity = Vector2( 100, 0 )
 
 [node name="Shore" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1994, 1076 )
+disabled = true
 
 [node name="Shore2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1973, -2 )
+disabled = true
 
 [connection signal="timeout" from="Obstangle Timer" to="." method="_on_Obstangle_Timer_timeout"]

@@ -8,6 +8,7 @@ export (float) var speed_randomization=100;
 export (float) var spawn_delay=3;
 export (float) var min_spawn_delay=0.4;
 export (float) var spawn_delay_change=8;
+export (float) var spawn_delay_change_value=0.2;
 
 var speed=0;
 var next_spawn_time=0;
@@ -36,7 +37,7 @@ func _process(delta):
 		spawn_iceberg()
 		next_spawn_time = curr_time + spawn_delay
 		if last_spawn_time_change + spawn_delay_change < curr_time:
-			spawn_delay -= 0.1
+			spawn_delay -= spawn_delay_change_value
 		if spawn_delay < min_spawn_delay:
 			spawn_delay = min_spawn_delay
 	

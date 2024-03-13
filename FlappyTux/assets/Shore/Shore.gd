@@ -2,6 +2,7 @@ extends Node2D
 
 export (Array, PackedScene) var bergTemplates
 export (float) var bergsDistance=150
+export (bool) var disabled=false
 
 var speed=0;
 
@@ -10,7 +11,7 @@ var lastBergLocation=0;
 func _process(delta):
 	var location=position.x
 	
-	while location-lastBergLocation>bergsDistance:
+	while location-lastBergLocation>bergsDistance and not disabled:
 		lastBergLocation+=bergsDistance
 		spawn_new_shore_berg(lastBergLocation)
 
