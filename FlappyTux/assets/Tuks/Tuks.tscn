@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://FlappyTux/assets/Tuks/Tuks.gd" type="Script" id=1]
 [ext_resource path="res://FlappyTux/assets/Tuks/tuks.png" type="Texture" id=2]
@@ -8,6 +8,18 @@
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 40.9999
 height = 58.0002
+
+[sub_resource type="CanvasItemMaterial" id=2]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ImageTexture" id=3]
+flags = 63
+storage = 1
+flags = 63
+size = Vector2( 16, 16 )
 
 [node name="RigidBody2D" type="RigidBody2D"]
 contacts_reported = 1
@@ -37,5 +49,32 @@ texture = ExtResource( 2 )
 position = Vector2( 2, -4 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource( 2 )
+scale = Vector2( 8, 8 )
+emitting = false
+amount = 69
+one_shot = true
+explosiveness = 0.06
+fixed_fps = 60
+draw_order = 1
+texture = SubResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 7.0
+gravity = Vector2( 0, 0 )
+angular_velocity = 270.82
+angular_velocity_random = 0.1
+radial_accel = 28.44
+radial_accel_random = 1.0
+tangential_accel = 13.76
+tangential_accel_random = 0.25
+angle = 19.8
+scale_amount = 1.1
+color = Color( 1, 0, 0, 1 )
+hue_variation = 0.06
+hue_variation_random = 1.0
+anim_speed = 8.22
+anim_speed_random = 0.23
 
 [connection signal="body_entered" from="." to="." method="_on_RigidBody2D_body_entered"]
