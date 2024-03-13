@@ -16,6 +16,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [node name="RigidBody2D" type="RigidBody2D"]
+collision_mask = 3
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )

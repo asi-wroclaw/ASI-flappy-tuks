@@ -16,9 +16,6 @@ func _ready():
 	last_spawn_time_change = Time.get_unix_time_from_system()
 	last_gc_run=Time.get_unix_time_from_system()
 
-func get_spawning_cooldown():
-	return 1
-
 func _process(delta):
 	gc()
 	
@@ -27,6 +24,8 @@ func _process(delta):
 		$Shore.position.x=tuks_position+1500;
 		$Shore2.position.x=tuks_position+1500;
 		$IcebergSpawn.position.x=tuks_position+1500;
+		
+		$BillBrama.set_tuks_position($Tuks.position)
 
 func gc():
 	var time=Time.get_unix_time_from_system()
@@ -38,4 +37,7 @@ func gc():
 	var gc_x=$Tuks.position.x-gc_threshold
 	for child in get_children():
 		if child.position.x < gc_x:
+			if child==$BillBrama:
+				continue
+			
 			child.queue_free()
