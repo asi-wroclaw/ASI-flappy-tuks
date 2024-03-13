@@ -8,7 +8,7 @@
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
-uniform vec4 color : hint_color =vec4(0, 10, 200, 0);
+uniform vec4 color : hint_color =vec4(1, 5, 150, 100);
 
 uniform vec2 u_mouse_position;
 uniform vec2 u_ball_position=vec2(.5);
@@ -17,7 +17,7 @@ uniform float ratio;
 uniform float ball_abberation : hint_range(0,.2);
 
 float rand(vec2 pos){
-	return fract(sin(dot(pos, vec2(56,47))*1000.0)*1000.0);
+	return fract(sin(dot(pos+TIME*10.0, vec2(56,47))*1000.0)*1000.0);
 }
 
 float noise(vec2 pos){
@@ -25,14 +25,15 @@ float noise(vec2 pos){
 	vec2 f=fract(pos);
 	
 	float a=rand(i);
-	float b=rand(i+vec2(2.0,10.0));
-	float c=rand(i+vec2(0.5,1.0));
-	float d=rand(i+vec2(1.0,3.0));
+	float b=rand(i+vec2(1.0,5.0));
+	float c=rand(i+vec2(0.5,5.0));
+	float d=rand(i+vec2(10.0,3.0));
 	
 	vec2 cubic=f*f*(3.0-2.0*f);
 //	vec2 cubic=f;
 	
-	return mix(sin(a),tan(b),cubic.x)+tan(c-a)*cubic.y*(1.0-cubic.x)+(d-b)*cubic.x*cubic.y;
+	//return mix(sin(a),tan(b),cubic.x)+tan(c-a)*cubic.y*(1.0-cubic.x)+sin(d-b)*cubic.x*cubic.y;
+	return mix(sin(a+b)*0.1, (c+d+TIME*100.0)*0.01, fract(TIME)*c*0.00001);
 }
 
 float fbm(vec2 coord, int repeats){
@@ -83,7 +84,7 @@ void fragment(){
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
-shader_param/color = Color( 0, 10, 200, 0 )
+shader_param/color = Color( 1, 5, 150, 100 )
 shader_param/u_mouse_position = null
 shader_param/u_ball_position = Vector2( 0.5, 0.5 )
 shader_param/ratio = null
