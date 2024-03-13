@@ -17,7 +17,7 @@ uniform float ratio;
 uniform float ball_abberation : hint_range(0,.2);
 
 float rand(vec2 pos){
-	return fract(sin(dot(pos, vec2(56,47))*1000.0)*1000.0);
+	return fract(sin(dot(pos+TIME*10.0, vec2(56,47))*1000.0)*1000.0);
 }
 
 float noise(vec2 pos){
@@ -33,7 +33,7 @@ float noise(vec2 pos){
 //	vec2 cubic=f;
 	
 	//return mix(sin(a),tan(b),cubic.x)+tan(c-a)*cubic.y*(1.0-cubic.x)+sin(d-b)*cubic.x*cubic.y;
-	return mix(sin(a+b)*0.1, cos(c+d+1.0)*0.01, tan(c-a)*0.01);
+	return mix(sin(a+b)*0.1, (c+d+TIME*100.0)*0.01, fract(TIME)*c*0.00001);
 }
 
 float fbm(vec2 coord, int repeats){
