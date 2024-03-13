@@ -1,10 +1,9 @@
 extends RigidBody2D
 
-export var speed=400
-export var maxSpeed=500;
+export var speed=4000
+export var maxSpeed=4000;
 
 var screen_size
-
 var game_over=false
 
 func _ready():
@@ -33,10 +32,14 @@ func _process(delta):
 		vel.x=1
 	
 	linear_velocity+=vel*delta*speed;
-	
+	linear_velocity.x*lerp(linear_velocity.y,0,friction)
 	var currentSpeed=linear_velocity.length()
 	if currentSpeed>maxSpeed:
 		linear_velocity=linear_velocity.normalized()*maxSpeed
+
+func	 _physics_process(delta):
+	linear_velocity.x += -linear_velocity.x*0.05
+	linear_velocity.y += -linear_velocity.y*0.05
 
 #func _on_Tuks_body_entered(body):
 #	print("collision")
