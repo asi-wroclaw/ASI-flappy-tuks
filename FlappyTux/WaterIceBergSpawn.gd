@@ -5,15 +5,23 @@ export (float) var waterTilesDistance=1975
 export (float) var waterTileOffset=-2000
 
 export (Array, PackedScene) var bergTemplates;
-export (float) var bergDistance=250;
+export (float) var startBergDistance=400;
+export (float) var minBergDistance=200;
+export (float) var bergDistanceIncrease=5;
 
 export (float) var speed_randomization=100;
+
+var bergDistance=startBergDistance
 
 var lastWaterTileLocation=-700;
 
 var lastBergLocation=500;
 
 func _process(delta):
+	bergDistance-=bergDistanceIncrease*delta
+	if bergDistance<minBergDistance:
+		bergDistance=minBergDistance
+	
 	var location=position.x+waterTilesDistance*1.5
 	
 	while location-lastWaterTileLocation>waterTilesDistance:
