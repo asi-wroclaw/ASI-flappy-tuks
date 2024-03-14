@@ -5,6 +5,8 @@ code = "shader_type canvas_item;
 
 uniform vec4 color_correction : hint_color;
 uniform vec4 color_correction_texture2 : hint_color;
+uniform float scroll_scale=1;
+uniform float wave_speed=1.;
 
 uniform float x_scroll_speed;
 uniform float y_scroll_speed;
@@ -17,7 +19,8 @@ uniform vec2 UV_offset;
 vec2 dynamic_distortion(float uvx, float uvy){
 	const float no_dist = 1.0;
 	
-	uvx *= (sin(TIME)*sin(TIME)*0.15+0.5);
+	float ssin=sin(TIME*wave_speed);
+	uvx *= (ssin*ssin*0.15+0.5);
 	uvy *= no_dist;
 	return vec2(uvx, uvy);
 }
@@ -38,14 +41,13 @@ void fragment() {
 	textureSize(TEXTURE, 2);
 	//vec4 pixel_color = texture(TEXTURE, vec2(UV.x*(sin(TIME)*sin(TIME)*0.5+0.5), UV.y));
 	//COLOR = color_correction * greyscale(texture(SCREEN_TEXTURE, dynamic_distortion(SCREEN_UV.x, SCREEN_UV.y)));
-	vec4 texture_color_1 = (texture(TEXTURE, dynamic_distortion(UV.x + UV_offset.x, UV.y + UV_offset.y) + scrol(y_scroll_speed, x_scroll_speed, 1)));
-	vec4 texture_color_2 = texture(texture2, UV + UV_offset + scrol(y_scroll_speed, x_scroll_speed, 0.5));
+	vec4 texture_color_1 = (texture(TEXTURE, dynamic_distortion(UV.x + UV_offset.x, UV.y + UV_offset.y) + scrol(y_scroll_speed, x_scroll_speed, scroll_scale)));
+	vec4 texture_color_2 = texture(texture2, UV + UV_offset + scrol(y_scroll_speed, x_scroll_speed, scroll_scale/2.));
 	//vec4 texture_mix = vec4(texture_color_1.r * texture_color_2.r, texture_color_1.g * texture_color_2.r,texture_color_1.b * texture_color_2.r, 1);
 	//COLOR = vec4(texture_color_1.r * texture_color_2.r, texture_color_1.g * texture_color_2.r,texture_color_1.b * texture_color_2.r, 1);
 	float energy = brightness(texture_color_1) * brightness(texture_color_2);
 	vec4 color = texture(colorGradient, vec2(energy));
 	COLOR = color;
-	
 	
 	//COLOR = pixel_color;
 }"
@@ -72,6 +74,8 @@ noise = SubResource( 6 )
 shader = SubResource( 5 )
 shader_param/color_correction = Color( 0, 0.694118, 1, 1 )
 shader_param/color_correction_texture2 = Color( 0.607843, 0.713726, 0.882353, 1 )
+shader_param/scroll_scale = 1.0
+shader_param/wave_speed = 1.0
 shader_param/x_scroll_speed = 0.0
 shader_param/y_scroll_speed = 0.0
 shader_param/UV_offset = Vector2( 0, -0.042 )
@@ -82,7 +86,7 @@ shader_param/colorGradient = SubResource( 9 )
 resource_local_to_scene = true
 seed = 90
 octaves = 8
-period = 90.0
+period = 58.1
 persistence = 0.319
 lacunarity = 2.44
 
