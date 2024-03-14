@@ -35,6 +35,11 @@ func _process(delta):
 	elif Input.is_action_pressed("ui_right"):
 		vel.x=1
 	
+	vel.x+=Input.get_action_strength("joy_right")
+	vel.y+=Input.get_action_strength("joy_left")
+	
+	vel=vel.normalized()
+	
 	linear_velocity+=vel*delta*speed;
 	linear_velocity.x*lerp(linear_velocity.y,0,friction)
 	var currentSpeed=linear_velocity.length()

@@ -17,6 +17,6 @@ texture = ExtResource( 1 )
 polygon = PoolVector2Array( 2, -212, 52, -201, 74, -181, 134, -226, 122, -188, 79, -152, 101, -127, 122, -66, 107, 119, 149, 110, 98, 136, 113, 164, 69, 234, 38, 268, -118, 274 )
 
 [node name="Windows" type="Sprite" parent="."]
-position = Vector2( -63, 136 )
+position = Vector2( -74, 136 )
 scale = Vector2( 1.32617, 2.56055 )
 texture = ExtResource( 3 )
