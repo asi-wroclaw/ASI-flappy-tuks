@@ -52,5 +52,5 @@ position = Vector2( 1984, 1862 )
 snowTileYOffset = -315.0
 
 [node name="BillBrama" parent="." instance=ExtResource( 1 )]
-position = Vector2( -499, 912 )
-scale = Vector2( 3.5, 3.5 )
+position = Vector2( -1690, 885 )
+scale = Vector2( 3.4, 3.4 )
