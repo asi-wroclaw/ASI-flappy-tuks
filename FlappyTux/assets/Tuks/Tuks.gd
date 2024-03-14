@@ -21,7 +21,7 @@ func start(pos):
 
 func _process(delta):
 	if(game_over):
-		modulate.a -= 1*delta
+		modulate.a -= 0.8*delta
 		return;
 		
 	var vel=Vector2();

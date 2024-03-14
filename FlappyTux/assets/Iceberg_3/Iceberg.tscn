@@ -6,7 +6,7 @@
 [node name="RigidBody2D" type="RigidBody2D"]
 script = ExtResource( 2 )
 
-[node name="Iceberg3" type="Sprite" parent="."]
+[node name="Iceberg" type="Sprite" parent="."]
 position = Vector2( -11, -1 )
 texture = ExtResource( 1 )
 
