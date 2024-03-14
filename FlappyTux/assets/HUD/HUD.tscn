@@ -36,3 +36,16 @@ custom_constants/shadow_offset_x = 4
 custom_constants/shadow_offset_y = 4
 custom_fonts/normal_font = SubResource( 2 )
 text = "Score: "
+
+[node name="StartText" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 256.0
+margin_top = 409.0
+margin_right = 1652.0
+margin_bottom = 903.0
+rect_pivot_offset = Vector2( -335, -182 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 4
+custom_fonts/normal_font = SubResource( 1 )
+text = "Press space to start"

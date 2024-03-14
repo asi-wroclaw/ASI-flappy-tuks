@@ -41,10 +41,6 @@ __meta__ = {
 current = true
 
 [node name="HUD" parent="Tuks" instance=ExtResource( 11 )]
-margin_left = -433.0
-margin_top = -870.0
-margin_right = -433.0
-margin_bottom = -870.0
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 49, 565 )
