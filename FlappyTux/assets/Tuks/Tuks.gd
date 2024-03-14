@@ -43,6 +43,10 @@ func _process(delta):
 	handle_drift(delta)
 
 func handle_friction():
+	var friction=0.07
+	if Input.is_action_pressed("brake"):
+		friction*=2
+	
 	linear_velocity += -linear_velocity*0.07
 
 func handle_drift(delta):
