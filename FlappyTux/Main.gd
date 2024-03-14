@@ -25,7 +25,7 @@ func _process(delta):
 		$Shore2.position.x=tuks_position+1500;
 		$IcebergSpawn.position.x=tuks_position+1500;
 		
-		$BillBrama.set_tuks_position($Tuks.position)
+	$BillBrama.set_tuks_position($Tuks.position)
 
 func gc():
 	var time=Time.get_unix_time_from_system()
@@ -37,7 +37,7 @@ func gc():
 	var gc_x=$Tuks.position.x-gc_threshold
 	for child in get_children():
 		if child.position.x < gc_x:
-			if child==$BillBrama:
+			if child==$BillBrama or child==$HUD:
 				continue
 			
 			child.queue_free()

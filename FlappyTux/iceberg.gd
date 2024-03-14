@@ -4,8 +4,7 @@ extends RigidBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#print($Iceberg.self_modulate)
-	
-	
+		
 	var green = 230
 	var red = rand_range(170, green)
 	var blue = rand_range(green, 255)

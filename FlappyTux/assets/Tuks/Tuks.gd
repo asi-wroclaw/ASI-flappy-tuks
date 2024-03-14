@@ -78,3 +78,5 @@ func _on_RigidBody2D_body_entered(body):
 	$CollisionShape2D.set_deferred("disabled",true)
 	game_over=true
 	$CPUParticles2D.set_emitting(true)
+	
+	$HUD.died()
