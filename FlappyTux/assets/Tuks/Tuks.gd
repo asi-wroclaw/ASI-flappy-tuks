@@ -3,16 +3,22 @@ extends RigidBody2D
 export var speed=4000
 export var maxSpeed=4000;
 export (int) var max_drift_value=12000
+export (float) var drift_cooldown=3
 
 var screen_size
 var game_over=false
-var frame_count = 0
+var drift_timer = 0
+var to_be_drift_value = {"x": 0, "y": 0}
 var previous_drift_value = {"x": 0, "y": 0}
+
+func _init():
+	pass
 
 func _ready():
 #	hide()
 	screen_size=get_viewport_rect().size
 	set_contact_monitor(true)
+	$DriftTimer.connect("timeout", self, "do_drift")
 
 func start(pos):
 	position=pos
@@ -56,12 +62,19 @@ func handle_friction():
 	
 	linear_velocity += -linear_velocity*0.07
 
+func do_drift():
+	previous_drift_value = to_be_drift_value
+	print("Drift executed")
+
 func handle_drift(delta):
 	#return
-	frame_count += 1
-	if (frame_count % 180 == 0):
-		previous_drift_value.x = randi() % max_drift_value - round(max_drift_value / 2)
-		previous_drift_value.y = randi() % max_drift_value - round(max_drift_value / 2)
+	drift_timer += delta
+	if (drift_timer > drift_cooldown):
+		drift_timer = 0
+		to_be_drift_value.x = randi() % max_drift_value - round(max_drift_value / 2)
+		to_be_drift_value.y = randi() % max_drift_value - round(max_drift_value / 2)
+		$DriftTimer.start()
+		
 	else:
 		previous_drift_value.x -= round(previous_drift_value.x / 16)
 		previous_drift_value.y -= round(previous_drift_value.y / 16)

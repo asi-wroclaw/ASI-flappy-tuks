@@ -25,7 +25,7 @@ func _process(delta):
 		$Shore2.position.x=tuks_position+1500;
 		$IcebergSpawn.position.x=tuks_position+1500;
 		
-	$BillBrama.set_tuks_position($Tuks.position)
+	$BoleslawBrama.set_tuks_position($Tuks.position)
 
 func gc():
 	var time=Time.get_unix_time_from_system()
