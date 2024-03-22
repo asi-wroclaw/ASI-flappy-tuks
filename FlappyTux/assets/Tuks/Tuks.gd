@@ -35,8 +35,10 @@ func _process(delta):
 	elif Input.is_action_pressed("ui_right"):
 		vel.x=1
 	
+	vel.x-=Input.get_action_strength("joy_left")
 	vel.x+=Input.get_action_strength("joy_right")
-	vel.y+=Input.get_action_strength("joy_left")
+	vel.y+=Input.get_action_strength("joy_down")
+	vel.y-=Input.get_action_strength("joy_up")
 	
 	vel=vel.normalized()
 	
@@ -55,6 +57,7 @@ func handle_friction():
 	linear_velocity += -linear_velocity*0.07
 
 func handle_drift(delta):
+	#return
 	frame_count += 1
 	if (frame_count % 180 == 0):
 		previous_drift_value.x = randi() % max_drift_value - round(max_drift_value / 2)
