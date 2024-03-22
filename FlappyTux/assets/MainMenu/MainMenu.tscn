@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://FlappyTux/assets/MainMenu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://FlappyTux/assets/Bill/bill.png" type="Texture" id=2]
+[ext_resource path="res://FlappyTux/assets/Background/Water.tscn" type="PackedScene" id=3]
+[ext_resource path="res://FlappyTux/assets/Tuks/Tuks.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/main_theme.tres" type="Theme" id=5]
+[ext_resource path="res://FlappyTux/Main.tscn" type="PackedScene" id=6]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 1 )
+levelPacked = ExtResource( 6 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="water_surface" parent="Background" instance=ExtResource( 3 )]
+position = Vector2( 3010, 1793 )
+
+[node name="Bill" type="Sprite" parent="Background"]
+position = Vector2( 585, 572 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="Tuks" parent="Background" instance=ExtResource( 4 )]
+position = Vector2( 1400, 500 )
+rotation = 4.71239
+max_drift_value = 6000
+
+[node name="Menu" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu"]
+margin_left = 659.5
+margin_right = 1260.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CenterContainer"]
+margin_left = 35.0
+margin_right = 565.0
+margin_bottom = 310.0
+theme = ExtResource( 5 )
+
+[node name="Title" type="Label" parent="Menu/CenterContainer/VBoxContainer"]
+margin_right = 530.0
+margin_bottom = 150.0
+theme_type_variation = "TitleLabel"
+text = "Flappy Tuks"
+
+[node name="Start button" type="Button" parent="Menu/CenterContainer/VBoxContainer"]
+margin_top = 154.0
+margin_right = 530.0
+margin_bottom = 310.0
+text = "Start"
+
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/Start button" to="." method="_on_Start_button_pressed"]

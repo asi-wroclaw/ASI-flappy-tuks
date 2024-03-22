@@ -96,6 +96,7 @@ bump_strength = 88.0
 noise = SubResource( 3 )
 
 [node name="water_surface" type="Sprite"]
+pause_mode = 2
 material = SubResource( 2 )
 position = Vector2( 2041, 1120 )
 rotation = 1.5708
