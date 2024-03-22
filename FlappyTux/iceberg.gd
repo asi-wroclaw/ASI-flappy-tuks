@@ -10,4 +10,3 @@ func _ready():
 	var blue = rand_range(green, 255)
 	get_node("Iceberg").modulate = Color( red / 255.0, green / 255.0, blue / 255.0, 1)
 	#$Iceberg1.modulate = (Color(rand_range(88, 190),rand_range(77, 255),rand_range(250,255)))
-	pass # Replace with function body.

@@ -1,7 +1,8 @@
 extends RigidBody2D
-
-export var speed=4000
-export var maxSpeed=4000;
+# Tuks's speed and BoleslawBrama's speed aren't the same
+# Should probably rename them in the future
+export var speed=4000 
+export var maxSpeed=4000; # Around 950 Boleslaw's speed
 export (int) var max_drift_value=12000
 export (float) var drift_cooldown=3
 
@@ -46,10 +47,13 @@ func _process(delta):
 	vel.y+=Input.get_action_strength("joy_down")
 	vel.y-=Input.get_action_strength("joy_up")
 	
+	if Input.is_action_pressed("brake") and false:
+		vel.x = 0
+		vel.y = 0
+	
 	vel=vel.normalized()
 	
 	linear_velocity+=vel*delta*speed;
-	linear_velocity.x*lerp(linear_velocity.y,0,friction)
 	var currentSpeed=linear_velocity.length()
 	if currentSpeed>maxSpeed:
 		linear_velocity=linear_velocity.normalized()*maxSpeed
@@ -58,13 +62,12 @@ func _process(delta):
 func handle_friction():
 	var friction=0.07
 	if Input.is_action_pressed("brake"):
-		friction*=2
+		friction=0.2
 	
-	linear_velocity += -linear_velocity*0.07
+	linear_velocity += -linear_velocity*friction
 
 func do_drift():
 	previous_drift_value = to_be_drift_value
-	print("Drift executed")
 
 func handle_drift(delta):
 	#return
@@ -86,12 +89,6 @@ func handle_drift(delta):
 
 func _physics_process(delta):
 	handle_friction()
-
-#func _on_Tuks_body_entered(body):
-#	print("collision")
-#	hide()
-#	$CollisionShape2D.set_deferred("disabled",true)
-#	emit_signal("hit")
 
 func _on_RigidBody2D_body_entered(body):
 	pass

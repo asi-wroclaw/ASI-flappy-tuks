@@ -36,6 +36,7 @@ position = Vector2( 433, 870 )
 __meta__ = {
 "_edit_group_": true
 }
+drift_cooldown = 1e+14
 
 [node name="Camera2D" type="Camera2D" parent="Tuks"]
 current = true
@@ -64,3 +65,6 @@ snowTileYOffset = -315.0
 [node name="BoleslawBrama" parent="." instance=ExtResource( 1 )]
 position = Vector2( -2511, 845 )
 scale = Vector2( 3.4, 3.4 )
+startSpeed = 1000.0
+maxSpeed = 850.0
+closeTuksDistance = 1000.0
