@@ -19,9 +19,11 @@ _data = {
 }
 
 [node name="Main" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 4 )
 
 [node name="IcebergSpawn" type="Path2D" parent="."]
+pause_mode = 1
 position = Vector2( 957, 37 )
 curve = SubResource( 1 )
 script = ExtResource( 9 )
@@ -35,6 +37,7 @@ position = Vector2( 2069, 1908 )
 rotation = -1.57173
 
 [node name="Tuks" parent="." instance=ExtResource( 2 )]
+pause_mode = 1
 position = Vector2( 433, 870 )
 __meta__ = {
 "_edit_group_": true
@@ -59,19 +62,18 @@ __meta__ = {
 position = Vector2( -433, -870 )
 script = ExtResource( 12 )
 
-[node name="Area2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 49, 565 )
-linear_velocity = Vector2( 100, 0 )
-
 [node name="Shore" parent="." instance=ExtResource( 8 )]
+pause_mode = 1
 position = Vector2( 1973, -2 )
 snowTileYOffset = -775.0
 
 [node name="Shore2" parent="." instance=ExtResource( 8 )]
+pause_mode = 1
 position = Vector2( 1984, 1862 )
 snowTileYOffset = -315.0
 
 [node name="BoleslawBrama" parent="." instance=ExtResource( 1 )]
+pause_mode = 1
 position = Vector2( -2511, 845 )
 scale = Vector2( 3.4, 3.4 )
 startSpeed = 400.0

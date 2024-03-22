@@ -37,7 +37,7 @@ func gc():
 	var gc_x=$Tuks.position.x-gc_threshold
 	for child in get_children():
 		if child.position.x < gc_x:
-			if child==$BoleslawBrama or child==$HUD:
+			if child==$BoleslawBrama:
 				continue
 			
 			child.queue_free()
