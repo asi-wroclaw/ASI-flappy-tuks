@@ -30,28 +30,8 @@ func _process(delta):
 	if(game_over):
 		modulate.a -= 0.8*delta
 		return;
-		
-	var vel=Vector2();
 	
-	if Input.is_action_pressed("ui_up"):
-		vel.y=-1
-	elif Input.is_action_pressed("ui_down"):
-		vel.y=1
-	if Input.is_action_pressed("ui_left"):
-		vel.x=-1
-	elif Input.is_action_pressed("ui_right"):
-		vel.x=1
-	
-	vel.x-=Input.get_action_strength("joy_left")
-	vel.x+=Input.get_action_strength("joy_right")
-	vel.y+=Input.get_action_strength("joy_down")
-	vel.y-=Input.get_action_strength("joy_up")
-	
-	if Input.is_action_pressed("brake") and false:
-		vel.x = 0
-		vel.y = 0
-	
-	vel=vel.normalized()
+	var vel=$HandleInput.handle_input().normalized()
 	
 	linear_velocity+=vel*delta*speed;
 	var currentSpeed=linear_velocity.length()

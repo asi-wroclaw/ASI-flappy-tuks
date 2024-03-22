@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://FlappyTux/assets/Bill/Bill.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FlappyTux/assets/Tuks/Tuks.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://FlappyTux/WaterIceBergSpawn.gd" type="Script" id=9]
 [ext_resource path="res://FlappyTux/assets/Background/Water.tscn" type="PackedScene" id=10]
 [ext_resource path="res://FlappyTux/assets/HUD/HUD.tscn" type="PackedScene" id=11]
+[ext_resource path="res://FlappyTux/assets/Tuks/HandleInput.gd" type="Script" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -26,6 +27,8 @@ curve = SubResource( 1 )
 script = ExtResource( 9 )
 waterTile = ExtResource( 10 )
 bergTemplates = [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
+startBergDistance = 450.0
+minBergDistance = 250.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="IcebergSpawn"]
 position = Vector2( 2069, 1908 )
@@ -36,6 +39,8 @@ position = Vector2( 433, 870 )
 __meta__ = {
 "_edit_group_": true
 }
+speed = 5000
+maxSpeed = 5000
 drift_cooldown = 1e+14
 
 [node name="Camera2D" type="Camera2D" parent="Tuks"]
@@ -49,6 +54,10 @@ score_multiplier = 1.0
 __meta__ = {
 "_editor_description_": "Timer used for tuks \"natural\" drift."
 }
+
+[node name="HandleInput" type="Node2D" parent="Tuks"]
+position = Vector2( -433, -870 )
+script = ExtResource( 12 )
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 49, 565 )
@@ -65,6 +74,7 @@ snowTileYOffset = -315.0
 [node name="BoleslawBrama" parent="." instance=ExtResource( 1 )]
 position = Vector2( -2511, 845 )
 scale = Vector2( 3.4, 3.4 )
-startSpeed = 1000.0
-maxSpeed = 850.0
+startSpeed = 400.0
+maxSpeed = 800.0
+speedIncrease = 15.0
 closeTuksDistance = 1000.0
