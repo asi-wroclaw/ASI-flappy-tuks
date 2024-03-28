@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://FlappyTux/assets/HUD/debug.gd" type="Script" id=1]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="DebugOutput" type="RichTextLabel" parent="."]
+margin_left = 6.0
+margin_top = 148.0
+margin_right = 1922.0
+margin_bottom = 1078.0

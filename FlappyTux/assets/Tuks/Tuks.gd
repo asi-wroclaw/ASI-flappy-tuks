@@ -4,7 +4,7 @@ extends RigidBody2D
 export var speed=4000 
 export var maxSpeed=4000; # Around 950 Boleslaw's speed
 export (int) var max_drift_value=12000
-export (float) var drift_cooldown=3
+export (float) var drift_cooldown=3.0
 
 var screen_size
 var game_over=false
@@ -25,6 +25,7 @@ func start(pos):
 	position=pos
 	show()
 	$CollisionShape2D.disabled=false
+	$CollisionShape2D.disabled=false
 
 func _process(delta):
 	if(game_over):
@@ -33,6 +34,8 @@ func _process(delta):
 	
 	var vel=$HandleInput.handle_input().normalized()
 	
+	if Input.is_action_just_pressed("hud_debug"):
+		$DebugHUD.disabled = !$DebugHUD.disabled
 	linear_velocity+=vel*delta*speed;
 	var currentSpeed=linear_velocity.length()
 	if currentSpeed>maxSpeed:
