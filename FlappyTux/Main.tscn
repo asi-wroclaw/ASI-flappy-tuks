@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://FlappyTux/assets/Bill/Bill.tscn" type="PackedScene" id=1]
+[ext_resource path="res://FlappyTux/assets/Bill/PoliteBill.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FlappyTux/assets/Tuks/Tuks.tscn" type="PackedScene" id=2]
 [ext_resource path="res://FlappyTux/assets/Iceberg/Iceberg.tscn" type="PackedScene" id=3]
 [ext_resource path="res://FlappyTux/Main.gd" type="Script" id=4]
@@ -56,6 +56,5 @@ position = Vector2( 1984, 1862 )
 snowTileYOffset = -315.0
 
 [node name="BillBrama" parent="." instance=ExtResource( 1 )]
-pause_mode = 1
-position = Vector2( -2511, 845 )
-scale = Vector2( 3.4, 3.4 )
+position = Vector2( -2441, 839 )
+scale = Vector2( 3.51166, 3.51166 )
