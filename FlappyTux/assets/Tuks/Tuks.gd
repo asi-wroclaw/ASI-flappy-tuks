@@ -11,9 +11,17 @@ var game_over=false
 var drift_timer = 0
 var to_be_drift_value = {"x": 0, "y": 0}
 var previous_drift_value = {"x": 0, "y": 0}
+var timer_to_edit = 60
 
 func _init():
 	pass
+
+func _input(event):
+	#if timer_to_edit > 0 or not game_over:
+	#	return
+	if event is InputEventKey and event.pressed:
+		#print(event.scancode)
+		$HUD/WrittenName.write_character(event.scancode)
 
 func _ready():
 #	hide()
@@ -29,10 +37,11 @@ func start(pos):
 func _process(delta):
 	if(game_over):
 		modulate.a -= 0.8*delta
+		if timer_to_edit > 0:
+			timer_to_edit -= 1
 		return;
 	
 	var vel=$HandleInput.handle_input().normalized()
-	
 	# I have no idea how to put this in HandleInput function	
 	if Input.is_action_just_pressed("hud_debug"):
 		$DebugHUD.disabled = !$DebugHUD.disabled
