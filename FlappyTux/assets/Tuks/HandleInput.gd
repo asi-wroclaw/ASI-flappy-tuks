@@ -20,7 +20,8 @@ func handle_input() -> Vector2:
 	vel.y+=Input.get_action_strength("joy_down")
 	vel.y-=Input.get_action_strength("joy_up")
 	
-	if Input.is_action_pressed("brake") and false:
+	
+	if Input.is_action_pressed("brake") and false:  # Less fun breaking
 		vel.x = 0
 		vel.y = 0
 	return vel

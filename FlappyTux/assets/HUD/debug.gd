@@ -23,7 +23,9 @@ func update_display(tux_obj, boleslaw_obj, main_obj):
 	displayed_text += update_count_line(tux_obj.position, "Tux Position") + "\n"
 	displayed_text += update_count_line(boleslaw_obj.position, "Boleslaw Position") + "\n"
 	displayed_text += "Boleslaw Speed: " + String(round(boleslaw_obj.speed)) + "\n"
-	displayed_text += "Object Count: " + String(count_objects(main_obj))
+	displayed_text += "Object Count: " + String(count_objects(main_obj)) + "\n"
+	displayed_text += "Is Tuks Dead: " + String(tux_obj.game_over) + "\n"
+	displayed_text += "Is Brake Pressed: " + String(Input.is_action_pressed("brake")) + "\n"
 	
 	if disabled:
 		$DebugOutput.text = ""

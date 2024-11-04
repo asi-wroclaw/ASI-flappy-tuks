@@ -25,7 +25,6 @@ func start(pos):
 	position=pos
 	show()
 	$CollisionShape2D.disabled=false
-	$CollisionShape2D.disabled=false
 
 func _process(delta):
 	if(game_over):
@@ -34,6 +33,7 @@ func _process(delta):
 	
 	var vel=$HandleInput.handle_input().normalized()
 	
+	# I have no idea how to put this in HandleInput function	
 	if Input.is_action_just_pressed("hud_debug"):
 		$DebugHUD.disabled = !$DebugHUD.disabled
 	linear_velocity+=vel*delta*speed;
@@ -53,7 +53,8 @@ func do_drift():
 	previous_drift_value = to_be_drift_value
 
 func handle_drift(delta):
-	#return
+	if max_drift_value == 0:
+		return
 	drift_timer += delta
 	if (drift_timer > drift_cooldown):
 		drift_timer = 0
