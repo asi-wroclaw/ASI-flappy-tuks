@@ -118,12 +118,13 @@ hud_debug={
 
 2d/thread_model=2
 2d/default_gravity_vector=Vector2( 0, 0 )
-Verlet/default_gravity=Vector2( 0, 0 )
 Verlet/debug_grid=false
 Verlet/debug_statistics=true
+Verlet/default_gravity=Vector2( 0, 0 )
 
 [rendering]
 
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 quality/depth/hdr=false
+
